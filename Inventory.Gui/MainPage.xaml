@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Inventory.Core.ViewModels;assembly=Inventory.Core"
+             x:DataType="viewmodels:DashboardViewModels"
+             xmlns:models="clr-namespace:Inventory.Core.Models;assembly=Inventory.Core"
+             x:Class="Inventory.Gui.MainPage">
+
+    <Grid RowDefinitions="Auto, *" Margin="5" ColumnSpacing="15">
+        
+        <Button Grid.Row="0" Text="Load"/>
+        
+        
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Items}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:InventoryItems">
+                    <Grid ColumnDefinitions="*,*">
+                        <Label Text="{Binding InventoryNumber}"/>
+                        <Label Text="{Binding Title}" Grid.Column="1"/>
+                    </Grid>
+                    
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+
+        
+    </Grid>
+    
+
+</ContentPage>
