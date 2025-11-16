@@ -8,9 +8,9 @@ public class RestService : IRepository
 
     private RestClient _client;
 
-    public RestService()
+    public RestService(string apiBase)
     {
-        var options = new RestClientOptions("")
+        var options = new RestClientOptions(apiBase)
         {
             ThrowOnAnyError = true,
             Timeout = new TimeSpan(0,0,60)
@@ -45,6 +45,10 @@ public class RestService : IRepository
         if (result.Success)
         { 
             return result.Items;
+        }
+        else
+        {
+            return new List<InventoryItem>();
         }
         /*
         return new List<InventoryItem>

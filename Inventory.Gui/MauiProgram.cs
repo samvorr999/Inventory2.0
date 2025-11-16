@@ -18,8 +18,11 @@ namespace Inventory.Gui
                 });
 
             builder.Services.AddSingleton<MainPage>();
-            builder.Services.AddSingleton<DashboardViewModels>();
-            builder.Services.AddSingleton<IRepository>(new RestService());
+            builder.Services.AddSingleton<DashboardViewModel>();
+
+            string apiBase = "https://inventory.test/api/";
+            
+            builder.Services.AddSingleton<IRepository>(new RestService(apiBase));
 
 
 #if DEBUG

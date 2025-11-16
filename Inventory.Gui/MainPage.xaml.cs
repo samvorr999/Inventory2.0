@@ -6,7 +6,7 @@ namespace Inventory.Gui
     {
         
 
-        public MainPage(DashboardViewModels vm)
+        public MainPage(DashboardViewModel vm)
         {
             InitializeComponent();
             this.BindingContext = vm;

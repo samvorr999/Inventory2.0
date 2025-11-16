@@ -15,12 +15,12 @@ namespace Inventory.Core.Models
 
 
         [JsonPropertyName("title")]
-        string Title = string.Empty;
+        public string Title { get; set; } = string.Empty;
 
-        
+
 
         [JsonPropertyName("inventory_number")]
-        public string InventoryNoumber { get; set; }
+        public string InventoryNumber { get; set; }
 
         public InventoryItem(string inventoryNumber, string title)
         {
